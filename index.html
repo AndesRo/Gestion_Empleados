@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organización para la Conservación del Medio Ambiente</title>
     <link rel="icon" href="tree.png" type="image/png">
+    <div style="text-align:center;">
+        <img src="gif.gif" width="97" height="97">
+    </div>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,30 +17,47 @@
             color: darkgrey;
             line-height: 1.6;
         }
-        header, nav, section, footer {
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: white;
-            color: #1c831b;
+        header {
+            background-color: #1c831b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
         }
-        header h1 {
-            font-size: 24px;
+        h1 {
+            font-size: 38px;
             margin: 0;
         }
+        nav {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
         nav a {
-            display: block;
-            margin: 10px 0;
+            color: white;
             text-decoration: none;
-            color: #333;
+            margin: 0 10px;
         }
-        .activity {
-            margin-bottom: 30px;
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
         }
-        .activity img {
-            width: 100%;
+        h2 {
+            color: #1c831b;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .event-img {
+            max-width: 100%;
             height: auto;
+            margin-bottom: 20px;
+            display: block;
+            border-radius: 10px;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
@@ -52,17 +72,31 @@
             background-color: #1c831b;
             color: white;
         }
-        iframe, video {
+        video {
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
             display: block;
             border-radius: 10px;
         }
-        .formulario input, .formulario select, .formulario textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
+        .formulario {
             margin-bottom: 15px;
+        }
+        .formulario label {
+            display: block;
+            margin-bottom: 5px;
+            color: #1c831b;
+            font-weight: bold;
+        }
+        .formulario input[type="text"],
+        .formulario input[type="password"],
+        .formulario input[type="date"],
+        .formulario input[type="email"],
+        .formulario input[type="tel"],
+        .formulario textarea,
+        .formulario select {
+            width: 100%;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
@@ -76,25 +110,48 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .formulario input[type="submit"]:hover {
+            background-color: #155e13;
+        }
         footer {
             text-align: center;
             background-color: #1c831b;
             color: white;
             padding: 20px 0;
         }
-        @media screen and (min-width: 600px) {
-            header h1 {
-                font-size: 38px;
+
+        /* Media query para pantallas de hasta 768px (dispositivos móviles) */
+        @media only screen and (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            nav {
+                padding: 5px 0;
             }
             nav a {
-                display: inline;
-                margin: 0 10px;
+                margin: 0 5px;
             }
-            .activity {
-                margin-bottom: 20px;
+            section {
+                padding: 10px;
             }
-            .formulario input, .formulario select, .formulario textarea {
+            .event-img {
+                margin-bottom: 10px;
+            }
+            th, td {
+                padding: 5px;
+            }
+            .formulario input[type="submit"] {
+                padding: 8px 15px;
+            }
+            footer {
+                padding: 10px 0;
+            }
+            /* Estilo específico para los iframes de los videos */
+            #videos-relacionados iframe {
                 width: 100%;
+                height: 315px;
+                margin-bottom: 20px;
+                border-radius: 10px;
             }
         }
     </style>
@@ -110,7 +167,19 @@
     <a href="#actividades-realizadas">Actividades Realizadas</a>
     <a href="#proximos-eventos">Próximos Eventos</a>
     <a href="#videos-relacionados">Videos Relacionados</a>
+    <div style="display: flex; align-items: center;">
+        <audio controls style="width: 250px; height: 45px;">
+            <source src="audio.mp3" type="audio/mpeg">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+        <div style="margin-left: 10px;">
+            <span style="color: white;">Podcast</span>
+            <i class="fas fa-volume-up" style="color: white;"></i>
+        </div>
+    </div>
 </nav>
+
+
 
 <section id="quienes-somos">
     <h2>Quiénes Somos</h2>
@@ -119,24 +188,23 @@
     <p>Nuestro equipo está formado por profesionales comprometidos con la protección del medio ambiente y voluntarios entusiastas que contribuyen activamente a nuestras iniciativas.</p>
     
     <div class="contenedor-imagenes">
-        <img src="voluntarios.jpg" alt="voluntarios empresa">
-        <img src="imagen 1.jpg" alt="voluntarios empresa">
-    </div>
+    <img src="voluntarios.jpg" alt="voluntarios empresa" class="event-img">
+    <img src="imagen 1.jpg" alt="voluntarios empresa" class="event-img">
 </section>
 
 <section id="actividades-realizadas">
     <h2>Actividades Realizadas</h2>
     <div class="activity">
-        <p>Recogida de Basura en Playa Limón: Un evento comunitario donde limpiamos la playa de residuos plásticos y otros desechos.</p>
-        <img src="playa.jpg" alt="Actividad: Recogida de Basura en Playa Limón">
+        <li>Recogida de Basura en Playa Limón: Un evento comunitario donde limpiamos la playa de residuos plásticos y otros desechos.</li>
+        <img src="playa.jpg" alt="Actividad: Recogida de Basura en Playa Limón" class="event-img" width="660" height="440">
     </div>
     <div class="activity">
-        <p>Charla sobre Energías Renovables: Una sesión informativa sobre el potencial de las energías renovables para combatir el cambio climático.</p>
-        <img src="charla.jpg" alt="Actividad: Charla sobre Energías Renovables">
+        <li>Charla sobre Energías Renovables: Una sesión informativa sobre el potencial de las energías renovables para combatir el cambio climático.</li>
+        <img src="charla.jpg" alt="Actividad: Charla sobre Energías Renovables" class="event-img" width="660" height="440">
     </div>
     <div class="activity">
-        <p>Taller de Huertos Urbanos: Un taller práctico donde enseñamos a la comunidad a cultivar sus propios alimentos en entornos urbanos.</p>
-        <img src="huerto.jpg" alt="Actividad: Taller de Huertos Urbanos">
+        <li>Taller de Huertos Urbanos: Un taller práctico donde enseñamos a la comunidad a cultivar sus propios alimentos en entornos urbanos.</li>
+        <img src="huerto.jpg" alt="Actividad: Taller de Huertos Urbanos" class="event-img" width="660" height="440">
     </div>
     
     <h2>El cambio climático: un gran reto para la humanidad</h2>
@@ -173,26 +241,18 @@
     
     <h2>Temas de Interés</h2>
     <p>El cambio climático es uno de los desafíos más urgentes de nuestro tiempo. Conlleva una serie de impactos significativos en nuestro planeta, como el aumento de las temperaturas, el derretimiento de los casquetes polares y el aumento del nivel del mar. Es crucial tomar medidas para mitigar estos efectos y promover prácticas sostenibles en nuestras comunidades.</p>
-    <p>Para obtener más información sobre nuestros eventos, <a href="https://www.cambio-climatico.com/">haz clic aquí</a>.</p>
+    <p style="color: rgb(27, 36, 24);">Para obtener más información sobre nuestros eventos, <a href="https://www.cambio-climatico.com/" style="display: inline !important;">pinche aquí</a>.</p>
 </section>
 
 <section id="videos-relacionados">
     <h2>Videos Relacionados</h2>
     <!-- Floating frame 1 -->
-    <video width="100%" height="315" controls>
-        <source src="cambio climatico 2.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
-    </video>
+    <iframe width="560" height="315" src="cambio climatico 2.mp4" frameborder="0" allowfullscreen style="margin-bottom: 20px; border-radius: 10px;"></iframe>
     <!-- Floating frame 2 -->
-    <video width="100%" height="315" controls>
-        <source src="cambio climatico 3.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
-    </video>
+    <iframe width="560" height="315" src="cambio climatico 3.mp4" frameborder="0" allowfullscreen style="margin-bottom: 20px; border-radius: 10px;"></iframe>
     
-    <video width="100%" height="315" controls>
-        <source src="cambio climatico 4.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
-    </video>
+    <iframe width="560" height="315" src="cambio climatico 4.mp4" frameborder="0" allowfullscreen style="margin-bottom: 20px; border-radius: 10px;"></iframe>
+    
 </section>
 
 <section id="formulario-acceso">
@@ -219,7 +279,7 @@
         
         <label for="tipo_documento">Tipo de Documento:</label>
         <select id="tipo_documento" name="tipo_documento" required>
-            <option value="DNI">DNI</option>
+            <option value="DNI">Identificacion</option>
             <option value="RUT">RUT</option>
             <option value="Cédula">Cédula</option>
             <option value="Pasaporte">Pasaporte</option>
