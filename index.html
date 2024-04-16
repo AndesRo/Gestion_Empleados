@@ -167,6 +167,7 @@
     <a href="#actividades-realizadas">Actividades Realizadas</a>
     <a href="#proximos-eventos">Próximos Eventos</a>
     <a href="#videos-relacionados">Videos Relacionados</a>
+    <a href="https://es.wikipedia.org/wiki/Medio_ambiente" target="_blank"> Wikipedia</a>
     <div style="display: flex; align-items: center;">
         <audio controls style="width: 250px; height: 45px;">
             <source src="audio.mp3" type="audio/mpeg">
@@ -178,6 +179,7 @@
         </div>
     </div>
 </nav>
+
 
 
 
@@ -195,23 +197,19 @@
 <section id="actividades-realizadas">
     <h2>Actividades Realizadas</h2>
     <div class="activity">
-        <li>Recogida de Basura en Playa Limón: Un evento comunitario donde limpiamos la playa de residuos plásticos y otros desechos.</li>
+        <li><strong>Recogida de Basura en Playa Limón:<br></strong> Un evento comunitario donde limpiamos la playa de residuos plásticos y otros desechos.</li>
         <img src="playa.jpg" alt="Actividad: Recogida de Basura en Playa Limón" class="event-img" width="660" height="440">
     </div>
     <div class="activity">
-        <li>Charla sobre Energías Renovables: Una sesión informativa sobre el potencial de las energías renovables para combatir el cambio climático.</li>
+        <li><strong>Charla sobre Energías Renovables:<br></strong> Una sesión informativa sobre el potencial de las energías renovables para combatir el cambio climático.</li>
         <img src="charla.jpg" alt="Actividad: Charla sobre Energías Renovables" class="event-img" width="660" height="440">
     </div>
     <div class="activity">
-        <li>Taller de Huertos Urbanos: Un taller práctico donde enseñamos a la comunidad a cultivar sus propios alimentos en entornos urbanos.</li>
+        <li><strong>Taller de Huertos Urbanos:<br></strong> Un taller práctico donde enseñamos a la comunidad a cultivar sus propios alimentos en entornos urbanos.</li>
         <img src="huerto.jpg" alt="Actividad: Taller de Huertos Urbanos" class="event-img" width="660" height="440">
     </div>
     
-    <h2>El cambio climático: un gran reto para la humanidad</h2>
-    <ul>
-        <li>El cambio climático es el mayor reto medioambiental en la actualidad. Desde hace años estamos experimentando un rápido calentamiento global sin precedentes como consecuencia de la actividad humana, principalmente por la quema de combustibles fósiles que generan emisiones de efecto invernadero.</li>
-        <li>En este sentido, el sector eléctrico juega un papel clave para alcanzar el propósito fijado por el histórico Acuerdo de París de limitar el aumento de la temperatura del planeta a 1,5 ºC y atajar la descarbonización de la economía a través de la transición energética.</li>
-    </ul>
+    <!-- Resto del código -->
 </section>
 
 <section id="proximos-eventos">
@@ -241,7 +239,10 @@
     
     <h2>Temas de Interés</h2>
     <p>El cambio climático es uno de los desafíos más urgentes de nuestro tiempo. Conlleva una serie de impactos significativos en nuestro planeta, como el aumento de las temperaturas, el derretimiento de los casquetes polares y el aumento del nivel del mar. Es crucial tomar medidas para mitigar estos efectos y promover prácticas sostenibles en nuestras comunidades.</p>
-    <p style="color: rgb(27, 36, 24);">Para obtener más información sobre nuestros eventos, <a href="https://www.cambio-climatico.com/" style="display: inline !important;">pinche aquí</a>.</p>
+    <div style="text-align: center;">
+        <p>Para obtener más información sobre nuestros eventos, <a href="https://www.cambio-climatico.com/">pinche aquí</a>.</p>
+    </div>
+    
 </section>
 
 <section id="videos-relacionados">
@@ -255,64 +256,85 @@
     
 </section>
 
-<section id="formulario-acceso">
-    <h2>Formulario de Acceso</h2>
-    <form class="formulario" action="#" method="post">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
-        
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
-        
-        <input type="submit" value="Iniciar sesión">
-    </form>
-</section>
+<section id="formularios-ocultos">
+    <div style="text-align: center;">
+        <h2>Registro</h2>
+        <p>Para mostrar los formularios pulse <a href="#" id="mostrar-formularios">aquí</a> ingresando su usuario y contraseña</p>
+    </div>
+    
+    <div id="formularios-container" style="display: none;">
+        <section id="formulario-acceso">
+            <h2>Formulario de Acceso</h2>
+            <form class="formulario" action="#" method="post">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+                
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+                
+                <input type="submit" value="Iniciar sesión">
+            </form>
+        </section>
 
-<section id="formulario-registro">
-    <h2>Formulario de Registro</h2>
-    <form class="formulario" action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
-        
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
-        
-        <label for="tipo_documento">Tipo de Documento:</label>
-        <select id="tipo_documento" name="tipo_documento" required>
-            <option value="DNI">Identificacion</option>
-            <option value="RUT">RUT</option>
-            <option value="Cédula">Cédula</option>
-            <option value="Pasaporte">Pasaporte</option>
-        </select>
-        
-        <label for="numero_documento">Número de Documento:</label>
-        <input type="text" id="numero_documento" name="numero_documento" placeholder="Ingrese su número de documento" required>
-        
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-        
-        <label>Sexo:</label>
-        <input type="radio" id="sexo_masculino" name="sexo" value="masculino" required>
-        <label for="sexo_masculino">Masculino</label>
-        <input type="radio" id="sexo_femenino" name="sexo" value="femenino">
-        <label for="sexo_femenino">Femenino</label>
-        
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
-        
-        <label for="telefono">Teléfono Móvil:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono" required>
-        
-        <label for="comentarios">Comentarios:</label>
-        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese cualquier comentario"></textarea>
-        
-        <input type="submit" value="Registrarse">
-    </form>
+        <section id="formulario-registro">
+                <h2>Formulario de Registro</h2>
+                <form class="formulario" action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+                
+                <label for="tipo_documento">Tipo de Documento:</label>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="DNI">DNI</option>
+                    <option value="RUT">RUT</option>
+                    <option value="Cédula">Cédula</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+                
+                <label for="numero_documento">Número de Documento:</label>
+                <input type="text" id="numero_documento" name="numero_documento" placeholder="Ingrese su número de documento" required>
+                
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                
+                <label>Sexo:</label>
+                <input type="radio" id="sexo_masculino" name="sexo" value="masculino" required>
+                <label for="sexo_masculino">Masculino</label>
+                <input type="radio" id="sexo_femenino" name="sexo" value="femenino">
+                <label for="sexo_femenino">Femenino</label>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+                
+                <label for="telefono">Teléfono Móvil:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono" required>
+                
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese cualquier comentario"></textarea>
+                
+                <input type="submit" value="Registrarse">
+            </form>
+        </section>
+    </div>
 </section>
 
 <footer>
-    <p>&copy;Organización para la Conservación del Medio Ambiente. Todos los derechos reservados.<br>Trabajo Semana Tres.<br><i>Created by Andres Romero</i>🌍</p>
+    <p>&copy;Organización para la Conservación del Medio Ambiente. Todos los derechos reservados.<br><i>Trabajo Semana 3</i>🌍<br></p>
 </footer>
+
+<!-- JavaScript para mostrar/ocultar los formularios -->
+<script>
+    document.getElementById('mostrar-formularios').addEventListener('click', function() {
+        var formulariosContainer = document.getElementById('formularios-container');
+        if (formulariosContainer.style.display === 'none') {
+            formulariosContainer.style.display = 'block';
+        } else {
+            formulariosContainer.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
