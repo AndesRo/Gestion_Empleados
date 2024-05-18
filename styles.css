@@ -56,6 +56,26 @@ footer {
     font-size: 20px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    border: 1px solid green; /* Green borders */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quienes-somos-title {
+    grid-column: 1 / span 2; /* Spans two columns */
+    text-align: center; /* Centers the text */
+}
+
+
 /* Estilos para el contenido principal */
 
 main {
@@ -211,7 +231,7 @@ header h1 {
 
 /* Estilos para el menú de navegación */
 nav {
-    background-color: lightslategray;
+    background-color: rgb(23, 49, 11);
     padding: 10px 0;
 }
 
@@ -253,41 +273,27 @@ footer {
     color: #00FF00;
 }
 
-/* Media queries para pantallas más anchas */
-@media screen and (min-width: 768px) {
-    /* Ajustes de estilo para pantallas de tabletas y escritorio */
-    .container {
-        padding: 40px;
+/* Estilos para la sección de galería de imágenes en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .media-container {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
     }
 
-    header h1 {
-        font-size: 36px;
+    .media-item {
+        width: 100%; /* Ocupa todo el ancho disponible */
     }
 
-    nav {
-        padding: 20px 0;
-    }
-
-    nav a {
-        margin-right: 40px;
-    }
-
-    main {
-        padding: 40px 0;
-    }
-
-    section {
-        margin-bottom: 40px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    footer {
-        padding: 40px 0;
+    .media-item img {
+        width: 100%; /* Ajusta el ancho de las imágenes al 100% del contenedor */
+        height: auto; /* Ajusta automáticamente la altura según el ancho */
     }
 }
+
+/* Media queries para pantallas más pequeñas, como teléfonos móviles */
+@media screen and (max-width: 480px) {
+    /* Ajustes adicionales según sea necesario */
+}
+
 
 /* Estilos para impresión */
 @media print {

@@ -6,48 +6,30 @@
     <title>Organización para la Conservación del Medio Ambiente</title>
     <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS aquí -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            padding: 20px;
-        }
-
-        .grid-item {
-            border: 1px solid green; /* Lineas verdes */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .quienes-somos-title {
-            grid-column: 1 / span 2; /* Ocupa las dos columnas */
-            text-align: center; /* Centra el texto */
-        }
-    </style>
+    
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Organización para la Conservación del Medio Ambiente </h1>
-        <button id="toggle-menu-button" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-    </div>
-</header>
-
-<nav id="main-menu">
-    <div class="container">
-        <a href="#quienes-somos">Quiénes Somos</a>
-        <a href="#actividades-realizadas">Actividades Realizadas</a>
-        <a href="#proximos-eventos">Próximos Eventos</a>
-        <a href="#videos-relacionados">Videos Relacionados</a>
-        <a href="#temas-de-interes">Temas de Interés</a>
-        <a href="https://es.wikipedia.org/wiki/Medio_ambiente" target="_blank">Wikipedia</a>
-        <audio id="podcast-audio" src="audio/audio.mp3" preload="auto"></audio>
-        <button id="playpause-button" onclick="toggleAudio()"><i class="fas fa-globe"></i> Escucha nuestro podcast</button>
-    </div>
-</nav>
+    <header>
+        <div class="container">
+            <h1>Organización para la Conservación del Medio Ambiente</h1>
+            <button id="toggle-menu-button" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+    
+    <nav id="main-menu">
+        <div class="container">
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#actividades-realizadas">Actividades Realizadas</a>
+            <a href="#proximos-eventos">Próximos Eventos</a>
+            <a href="#videos-relacionados">Videos Relacionados</a>
+            <a href="#temas-de-interes">Temas de Interés</a>
+            <a href="https://es.wikipedia.org/wiki/Medio_ambiente" target="_blank">Wikipedia</a>
+            <audio id="podcast-audio" src="audio/a.mp3" preload="auto"></audio>
+            <button id="playpause-button" onclick="toggleAudio()"><i class="fas fa-globe"></i> Escucha nuestro podcast</button>
+        </div>
+    </nav>
+    
 
 <main>
     <div class="container grid-container">
@@ -68,38 +50,31 @@
         </section>
 
         <!-- Próximos Eventos -->
-        <section id="proximos-eventos" class="grid-item">
-            <h2>Próximos Eventos</h2>
-            <table class="eventos-table">
-                <thead>
-                    <tr>
-                        <th>Evento</th>
-                        <th>Lugar</th>
-                        <th>Fecha y Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Día del Árbol</td>
-                        <td>Parque Central</td>
-                        <td>15 de abril de 2024, 10:00 - 14:00</td>
-                    </tr>
-                    <tr>
-                        <td>Conferencia sobre Conservación Marina</td>
-                        <td>Centro Cultural Municipal</td>
-                        <td>22 de abril de 2024, 18:00 - 20:00</td>
-                    </tr>
-                    <!-- Agrega más filas según sea necesario -->
-                </tbody>
-            </table>
-        </section>
+       <!-- Próximos Eventos -->
+<section id="proximos-eventos" class="grid-item">
+    <h2>Próximos Eventos</h2>
+    <div class="eventos-grid">
+        <div class="evento">
+            <h3>Día del Árbol</h3>
+            <p><strong>Lugar:</strong> Parque Central</p>
+            <p><strong>Fecha y Hora:</strong> 15 de abril de 2024, 10:00 - 14:00</p>
+        </div>
+        <div class="evento">
+            <h3>Conferencia sobre Conservación Marina</h3>
+            <p><strong>Lugar:</strong> Centro Cultural Municipal</p>
+            <p><strong>Fecha y Hora:</strong> 22 de abril de 2024, 18:00 - 20:00</p>
+        </div>
+        <!-- Agrega más eventos aquí -->
+    </div>
+</section>
+
 
         <!-- Videos Relacionados -->
         <section id="videos-relacionados" class="grid-item">
             <h2>Videos Relacionados</h2>
             <div class="video-container">
                 <iframe width="100%" height="315" src="video/cambio climatico 2.mp4" frameborder="0" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="video/cambio climatico 3.mp4" frameborder="0" allowfullscreen></iframe>
+                
                 <!-- Agrega más iframes de vídeos aquí -->
             </div>
         </section>
@@ -113,9 +88,12 @@
                     <p>Recogiendo desechos plásticos en una playa para promover el reciclaje y la conservación costera.</p>
                 </div>
                 <div class="media-item">
-                    <iframe src="img/006-charlas.jpg" frameborder="0" allowfullscreen></iframe>
+                    <img src="img/charla.jpg" alt="Charla sobre la importancia de los bosques en la mitigación del cambio climático">
                     <p>Charla sobre la importancia de los bosques en la mitigación del cambio climático.</p>
                 </div>
+            </div>
+            
+                
                 <!-- Agrega más elementos multimedia aquí -->
             </div>
         </section>
@@ -187,7 +165,7 @@
 <footer>
     <div class="container">
         <!-- Contenido del pie de página -->
-        <p>&copy; Organización para la Conservación del Medio Ambiente. Todos los derechos reservados.<br>Andres Romero | Tarea Web 7</p>
+        <p>&copy; Organización para la Conservación del Medio Ambiente. Todos los derechos reservados.<br>Andres Romero | Tarea Web 8</p>
         <!-- Iconos de redes sociales -->
         <div class="social-icons">
             <a href="https://www.facebook.com/TuPagina" target="_blank"><i class="fab fa-facebook"></i></a>
