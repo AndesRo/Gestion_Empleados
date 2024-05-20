@@ -161,3 +161,23 @@ footer .social-media img {
         height: auto;
     }
 }
+
+@media (max-width: 414px) {
+    /* Ajustes para dispositivos como Samsung A54 */
+    .container {
+        padding: 10px;
+    }
+
+    .activity-item, .event-item {
+        width: calc(100% - 20px); /* Ajuste para ocupar todo el ancho disponible */
+    }
+
+    .gallery img {
+        width: calc(100% - 20px); /* Ajuste para ocupar todo el ancho disponible */
+    }
+
+    .video-gallery iframe {
+        width: calc(100% - 20px); /* Ajuste para ocupar todo el ancho disponible */
+        height: 200px; /* Altura fija para los videos en dispositivos móviles */
+    }
+}
