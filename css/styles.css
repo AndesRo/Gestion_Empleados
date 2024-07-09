@@ -6,7 +6,7 @@ body {
     font-family: 'Arial', sans-serif;
     background: url('../images/Travel.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #ada9a9;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -126,21 +126,60 @@ table tr:hover {
     }
 }
 
-/* Estilos para las notificaciones */
+
+/* Animación de entrada */
+@keyframes slide-in-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animación de salida */
+@keyframes slide-out-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* styles.css */
+
 #notification-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 300px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
     z-index: 1000;
 }
 
 .notification {
+    display: inline-block;
+    white-space: nowrap;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 10px 20px;
+    margin: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 1em;
+    animation: slide-in-bottom 0.5s ease-in-out;
+}
+
+@keyframes slide-in-bottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
