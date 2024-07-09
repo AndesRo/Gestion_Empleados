@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - Paquetes Turísticos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Paquetes Turísticos</h1>
+    <div class="package-list">
+        <div class="package">
+            <h2>Paquete 1: Paseo Isla Margarita</h2>
+            <p>Disfruta de una semana en las playas más hermosas.</p>
+            <button onclick="addToCart('Paquete Isla Margarita', 800.000)">Agregar al carrito</button>
+        </div>
+        <div class="package">
+            <h2>Paquete 2: Escapada Torres del Paine</h2>
+            <p>Explora las montañas y disfruta de la naturaleza.</p>
+            <button onclick="addToCart('Paquete Torres del Paine', 700.000)">Agregar al carrito</button>
+        </div>
+    </div>
+    <a href="cart.php">Ver Carrito</a>
+
+    <!-- Contenedor para las notificaciones -->
+    <div id="notification-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
