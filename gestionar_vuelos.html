@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validarFormularioVuelo() {
+            var origen = document.forms["formVuelo"]["origen"].value;
+            var destino = document.forms["formVuelo"]["destino"].value;
+            var fecha = document.forms["formVuelo"]["fecha"].value;
+            var plazas = document.forms["formVuelo"]["plazas_disponibles"].value;
+            var precio = document.forms["formVuelo"]["precio"].value;
+
+            if (origen == "" || destino == "" || fecha == "" || plazas == "" || precio == "") {
+                alert("Todos los campos deben ser llenados.");
+                return false;
+            }
+            if (plazas <= 0 || precio <= 0) {
+                alert("Las plazas y el precio deben ser mayores que 0.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Gestionar Vuelos</h2>
+    <form name="formVuelo" action="../src/insertar_vuelo.php" method="POST" onsubmit="return validarFormularioVuelo()">
+        Origen: <input type="text" name="origen"><br>
+        Destino: <input type="text" name="destino"><br>
+        Fecha: <input type="date" name="fecha"><br>
+        Plazas Disponibles: <input type="number" name="plazas_disponibles"><br>
+        Precio: <input type="number" name="precio"><br>
+        <input type="submit" value="Registrar Vuelo">
+    </form>
+</body>
+</html>
