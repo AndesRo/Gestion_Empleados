@@ -22,24 +22,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['carrito'] = [];
     }
 
-    if ($tipo == 'vuelo') {
-        $sql = "SELECT * FROM VUELO WHERE id_vuelo = $id";
-    } else {
-        $sql = "SELECT * FROM HOTEL WHERE id_hotel = $id";
-    }
+    $sql = $tipo == 'vuelo' ? "SELECT * FROM VUELO WHERE id_vuelo = ?" : "SELECT * FROM HOTEL WHERE id_hotel = ?";
+    
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $item = $result->fetch_assoc();
-        $item['tipo'] = $tipo;
-        $_SESSION['carrito'][] = $item;
-        showNotificationScript('success', 'Artículo agregado', 'El artículo ha sido agregado al carrito.');
+        if ($result->num_rows > 0) {
+            $item = $result->fetch_assoc();
+            $item['tipo'] = $tipo;
+            $_SESSION['carrito'][] = $item;
+            showNotificationScript('success', 'Artículo agregado', 'El artículo ha sido agregado al carrito.');
+        } else {
+            showNotificationScript('error', 'Error', 'No se pudo agregar el artículo al carrito.');
+        }
+        
+        $stmt->close();
     } else {
-        showNotificationScript('error', 'Error', 'No se pudo agregar el artículo al carrito.');
+        showNotificationScript('error', 'Error', 'Error en la consulta de base de datos.');
     }
 }
 
 header("Location: ../public/index.html");
 exit();
-
